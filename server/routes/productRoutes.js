@@ -29,7 +29,7 @@ router.get("/:id/recommendations", async (req, res) => {
 
     // Python ML service
     const response = await axios.get(
-      `http://127.0.0.1:8000/recommend/${productId}`
+      `${process.env.ML_SERVICE_URL}/recommend/${productId}`
     );
 
     const recommendations = response.data.recommendations;
